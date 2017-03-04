@@ -3,7 +3,7 @@ resources:
 - name: hello_resource
   type: git
   source:
-    uri: https://github.com/making/hello-concourse.git
+    uri: https://github.com/yoshiyoshifujii/hello-concourse.git
 jobs:
 - name: hello-job
   public: true # UI上でJobの結果をログイン不要で公開するかどうか
@@ -11,4 +11,4 @@ jobs:
   - get: hello_resource
     trigger: true # Resourceに変更があれば自動でジョブを実行するかどうか
   - task: run-hello
-    file: hello/hello.yml
+    file: hello_resource/hello.yml
